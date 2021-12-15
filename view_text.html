@@ -1,0 +1,26 @@
+
+<html>
+<head>
+    <title>Document</title>
+    <script type="text/javascript">
+        function getText() {
+            
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    document.getElementById("t").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "text.txt", true);
+            xhr.send();
+            
+        }
+
+    </script>
+</head>
+<body>
+    <h1><div id="t">This is going to be changed using AJAX without jQuery</div></h1>
+    <button onclick="getText();">Click on it</button>
+    
+</body>
+</html>
